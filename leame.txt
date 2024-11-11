@@ -1,0 +1,29 @@
+comunicacion cliente servidor basada en protocolo HTTP
+protocolo http sin estado (stateless)
+cliente hace una request, cada petición es independiente. El servidor no recuerda quién hizo la petición.
+independecia de peticiones. cada petición es un evento aislado.
+no hay persistencia. datos sin almacenar
+escalabilidad. no se puede almacenar el estado de cada usuario, HTTP permite alta escalibidad del servidor. El consumo de datos es bajo.
+
+Problema
+inicio sesión. el servidor debe recordar al usuario en su visita.
+personalizar la experiencia de usuario
+
+Solución
+cookies. 
+sesiones de servidor. mantiene el estado de cada usuario.
+
+Fases
+inicio de sesiones
+guardar datos en sesiones
+conversar, comunicar siempre con el sessionID
+cerrar sesion o destroy
+
+$_SESSION['usuario']
+
+session hijacking - robo de sesión
+vulnerabilidad a este tipo de ataques
+Solucion
+utilizar https
+regenerar id de sesion - session_regenerate_id()
+establecer un ciclo de vida corta de la sessión (sesion expire en 30 minutos)
